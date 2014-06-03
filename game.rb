@@ -19,7 +19,7 @@ end
 class GameWindow < Gosu::Window
 
   def initialize
-    super(240, 680, false)
+    super(360, 800, false)
     self.caption = "Tetris"
     @audio_engine = Tetris::AudioEngine.new(self)
     @game_over = false
@@ -46,15 +46,15 @@ class GameWindow < Gosu::Window
   end
 
   def draw
-    translate 0, 90 do
+    translate 20, 75 do
       @grid.draw
       @shapelogic.draw
     end
-    translate 72, 10 do
+    translate 212, 43 do
       @next_shape.draw
     end
-    @font.draw "Score:    %05i" % @scoring.score, 10, 620, 0
-    @font.draw "Lvl:          %02i" % @scoring.level, 10, 100, 0
+    @font.draw "Score: %05i" % @scoring.score, 25, 0, 0
+    @font.draw "Lvl:   %02i" % @scoring.level, 25, 20, 0
     @font.draw "Game Over", 10, 200, 0, 2, 2, Gosu::Color::BLACK if game_over?
   end
 
@@ -81,7 +81,7 @@ class GameWindow < Gosu::Window
 
   def game_over!
     @game_over = true
-    @endgamesample.play
+  	play_sample :boom
   end
 
   def game_over?
