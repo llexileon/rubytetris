@@ -37,7 +37,7 @@ class GameWindow < Gosu::Window
     @shapelogic = Tetris::ShapeLogic.new(self, @grid, @randomizer)
     @next_shape = Tetris::NextShape.new(self, @randomizer)
     @player = PlayerInput.new(self, @shapelogic)
-    @font = Gosu::Font.new(self, "assets/victor-pixel.ttf", 30)
+    @font = Gosu::Font.new(self, "assets/victor-pixel.ttf", 32)
     @audio_engine.soundtrack
   end
   
@@ -60,8 +60,8 @@ class GameWindow < Gosu::Window
     translate 196, 28 do
       @next_shape.draw
     end
-    @font.draw "Points: %05i" % @scoring.score, 25, 0, 0
-    @font.draw "Lvl:%2i" % @scoring.level, 25, 20, 0
+    @font.draw "%05i" % @scoring.score, 25, 43, 0
+    @font.draw "Lvl:%2i" % @scoring.level, 25, 15, 0
     @font.draw "Game Over", 26, 202, 0, 2, 2, Gosu::Color::RED1 if game_over?
   end
 

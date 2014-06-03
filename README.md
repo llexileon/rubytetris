@@ -23,6 +23,7 @@ This is a Tetris clone written in Ruby using the [Gosu framework](http://code.go
 # Resources
 
 I've tried to implement the mechanics of the game reasonably faithfully thus far.
+
 For more information, see the [tetris wiki](http://en.wikipedia.org/wiki/tetris_(video_game)).
 
 # Thanks
