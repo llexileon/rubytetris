@@ -16,7 +16,7 @@ This is a Tetris clone written in Ruby using the [Gosu framework](http://code.go
 * Down arrow to accelerate shape drop
 * Left & Right arrows to move shape across the grid
 * Z to rotate shape counter clockwise
-* X to rotate shape counter clockwise
+* X to rotate shape clockwise
 * Q to quit
 
 
