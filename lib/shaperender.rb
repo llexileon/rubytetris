@@ -1,13 +1,13 @@
 module Tetris
   module ShapeRender
     Colors = {
-      :I => :cyan,
-      :J => :blue,
-      :L => :orange,
-      :O => :yellow,
-      :S => :green,
-      :T => :purple,
-      :Z => :red
+      :I => :cyan1,
+      :J => :blue1,
+      :L => :orange1,
+      :O => :yellow1,
+      :S => :green1,
+      :T => :purple1,
+      :Z => :red1
     }
     
     def each_block

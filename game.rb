@@ -12,14 +12,21 @@ require 'lib/randomizer'
 require 'lib/audioengine'
 
 class Gosu::Color
-  PURPLE = Gosu::Color.new(0xffff00ff)
-  ORANGE = Gosu::Color.new(0xffff9900)
+  PURPLE1 = Gosu::Color.new (0xff8030f2)
+  ORANGE1 = Gosu::Color.new (0xfff1751e)
+  CYAN1 = Gosu::Color.new (0xff30f2e1)
+  BLUE1 = Gosu::Color.new (0xff30a2f2)
+  YELLOW1 = Gosu::Color.new (0xfff2e130)
+  GREEN1 = Gosu::Color.new (0xffa2f230)
+  RED1 = Gosu::Color.new (0xfff23041)
+  GREY1 = Gosu::Color.new (0xffb5b8ba)
+  GREY2 = Gosu::Color.new (0xff2d2f31)
 end
 
 class GameWindow < Gosu::Window
 
   def initialize
-    super(360, 800, false)
+    super(336, 728, false)
     self.caption = "Tetris"
     @audio_engine = Tetris::AudioEngine.new(self)
     @game_over = false
@@ -46,16 +53,16 @@ class GameWindow < Gosu::Window
   end
 
   def draw
-    translate 20, 75 do
+    translate 28, 84 do
       @grid.draw
       @shapelogic.draw
     end
-    translate 212, 43 do
+    translate 196, 28 do
       @next_shape.draw
     end
-    @font.draw "Score: %05i" % @scoring.score, 25, 0, 0
-    @font.draw "Lvl:   %02i" % @scoring.level, 25, 20, 0
-    @font.draw "Game Over", 10, 200, 0, 2, 2, Gosu::Color::BLACK if game_over?
+    @font.draw "Points: %05i" % @scoring.score, 25, 0, 0
+    @font.draw "Lvl:%2i" % @scoring.level, 25, 20, 0
+    @font.draw "Game Over", 26, 202, 0, 2, 2, Gosu::Color::RED1 if game_over?
   end
 
   def gravity

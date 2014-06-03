@@ -3,7 +3,7 @@ module Tetris
     attr_reader :cells
     
     Rows, Columns = 22, 10
-    CellSize = 32
+    CellSize = 28
     LineClearDelay = 20
     
     def initialize(window, scoring)
@@ -75,9 +75,13 @@ module Tetris
         next if row < 2
         x, y = col * CellSize, row * CellSize
         if complete_rows.include?(row)
-          c = (@line_clear_counter/6) % 2 == 0 ? Gosu::Color::WHITE : Gosu::Color::GRAY
+          c = (@line_clear_counter/6) % 2 == 0 ? Gosu::Color::GREY1 : Gosu::Color::GREY2
+
+
         else
-          c = state ? Gosu::Color::WHITE : Gosu::Color::GRAY
+          c = state ? Gosu::Color::GREY1 : Gosu::Color::GREY2
+
+
         end
         size = CellSize - 1
         @window.draw_square x, y, c, size
