@@ -1,0 +1,2 @@
+class HighScores
+end

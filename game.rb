@@ -1,6 +1,10 @@
 #!/usr/bin/env ruby -w
 
 require 'gosu'
+require './lib/menu'
+require './lib/player'
+require './lib/grid'
+require './lib/high_scores'
 
 class GameWindow < Gosu::Window
 
@@ -11,13 +15,13 @@ class GameWindow < Gosu::Window
 		super(WIDTH, HEIGHT, false)
 		self.caption = "Ruby Tetris"
 
-		# @lines = 0
-		# @level = 1
+		@lines = 0
+		@level = 1
 
-		# @menu = Menu.new
-		# @player = Player.new
-		# @grid = Grid.new
-		# @high_scores = HighScores.new
+		@menu = Menu.new
+		@player = Player.new
+		@grid = Grid.new
+		@high_scores = HighScores.new
 	end
 
 end
