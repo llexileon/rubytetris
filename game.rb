@@ -62,7 +62,7 @@ class GameWindow < Gosu::Window
     end
     @font.draw "%05i" % @scoring.score, 25, 43, 0
     @font.draw "Lvl:%2i" % @scoring.level, 25, 15, 0
-    @font.draw "Game Over", 26, 202, 0, 2, 2, Gosu::Color::RED1 if game_over?
+    @font.draw "Game Over", 38, 205, 0, 1.7, 1.7, Gosu::Color::RED1 if game_over?
   end
 
   def gravity
