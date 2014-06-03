@@ -40,8 +40,6 @@ class GameWindow < Gosu::Window
     @grid.update
 
     unless @grid.clearing_lines?
-      # Movement is jerky if a move under gravity happens while soft dropping.
-      # Not sure if gravity is supposed to be applied while soft dropping.
       @shapelogic.move_down if @frame % gravity == 0
       @player.update
     end
@@ -61,8 +59,6 @@ class GameWindow < Gosu::Window
   end
 
   def gravity
-    # Based on the NES version of the game.
-    # http://tetris.wikia.com/wiki/Tetris_(NES,_Nintendo)
     case @scoring.level
     when 0..7
       48 - (@scoring.level * 5)

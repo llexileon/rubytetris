@@ -18,8 +18,6 @@ module Tetris
     def load_samples
       load_sample(:ping, "assets/audio/ping.mp3")
       load_sample(:boom, "assets/audio/warp.mp3")
-      # load_sample(:fx1, "32955__HardPCM__Chip055.wav")
-      # load_sample(:fx2, "31870__HardPCM__Chip033.wav")
     end    
 
     def soundtrack # Game Soundtrack
