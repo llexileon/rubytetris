@@ -105,7 +105,7 @@ class GameWindow < Gosu::Window
 
   def button_down(id)
     @player.button_down(id) unless @grid.clearing_lines?
-    close if id == Gosu::Button::KbEscape
+    close if id == Gosu::Button::KbQ
   end
 end
 
